@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://i0m68dns5082"]
+
+[ext_resource type="Texture2D" uid="uid://de282fet23hou" path="res://Art/Screenshot 2026-07-09 at 19.25.56.png" id="1_i7bgn"]
+[ext_resource type="Texture2D" uid="uid://b8usfbvujgtah" path="res://Art/watch numbers.png" id="2_8tyud"]
+[ext_resource type="Script" uid="uid://bv6hhv1e72wn" path="res://Version 2/fancy_rotate.gd" id="3_6rqk0"]
+[ext_resource type="Texture2D" uid="uid://lgk81nqpqiy0" path="res://Art/watch hand big.png" id="4_s0la5"]
+[ext_resource type="Texture2D" uid="uid://63ksgluq26xr" path="res://Art/watch hand center.png" id="5_f4gx3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dm085"]
+load_path = "res://.godot/imported/watch red bg.png-7c10664d40dae82e2871f8f77ab9677e.ctex"
+
+[node name="Watch" type="Control" unique_id=2141018018]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Example" type="TextureRect" parent="." unique_id=862142669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i7bgn")
+
+[node name="Red_Bg" type="TextureRect" parent="." unique_id=1896434234]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32900003
+anchor_top = 0.117000006
+anchor_right = 0.652
+anchor_bottom = 0.69100004
+offset_left = 0.3199463
+offset_top = -0.36000824
+offset_right = -464.83997
+offset_bottom = -465.28003
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture = SubResource("CompressedTexture2D_dm085")
+
+[node name="WatchNumbers" type="TextureRect" parent="Red_Bg" unique_id=964223415]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8tyud")
+
+[node name="Pivot" type="Control" parent="Red_Bg" unique_id=1051365377]
+layout_mode = 1
+anchor_left = 0.497
+anchor_top = 0.497
+anchor_right = 0.497
+anchor_bottom = 0.5
+offset_left = -0.035003662
+offset_top = -0.035003662
+offset_right = -0.035003662
+offset_bottom = -0.5
+script = ExtResource("3_6rqk0")
+
+[node name="TextureRect" type="TextureRect" parent="Red_Bg/Pivot" unique_id=158455897]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -74.0
+offset_right = 5.0
+offset_bottom = 1.25
+texture = ExtResource("4_s0la5")
+
+[node name="CenterContainer" type="CenterContainer" parent="Red_Bg" unique_id=2104268476]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterKnob" type="TextureRect" parent="Red_Bg/CenterContainer" unique_id=2071599161]
+layout_mode = 2
+texture = ExtResource("5_f4gx3")
